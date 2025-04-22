@@ -51,13 +51,13 @@ The images that will be used for training the proper trajectory prediction will 
 ### 5. Launch the training
 To train the model for occupancy prediction run the following command:
 ```bash
-python3 train_prediction_image_space_multistep.py --steps 3 --prediction occupancy --loss balanced_weighted_l1 --batch 32 --epochs 200
+python3 train_prediction_image_space_multistep.py --steps 3 --prediction occupancy --pretrained_model_path 'output/Unet_weighted_l1_loss/best_model.pth' --loss balanced_weighted_l1 --batch 32 --epochs 200
 ```
 To train the model for trajectory prediction run:
 ```bash
-python3 train_prediction_image_space_multistep.py --steps 3 --prediction trajectories --loss balanced_weighted_l1 --batch 32 --epochs 200
+python3 train_prediction_image_space_multistep.py --steps 3 --prediction trajectories --pretrained_model_path 'output/Unet_weighted_l1_loss/best_model.pth' --loss balanced_weighted_l1 --batch 32 --epochs 200
 ```
-There is the possibility to change the loss function (loss_functions.py contains the possible losses), the number of step in the future used for training, the batch size or number of epochs.
+Through the arguments, there is the possibility to change the loss function (loss_functions.py contains the possible losses), the number of step in the future used for training, the pretrained model to use, the batch size or number of epochs.
 The model will train and the best-performing model will be saved in the folder:
 ```bash
 /output/{name of the model}_{name of the loss function}.
