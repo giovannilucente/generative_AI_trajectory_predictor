@@ -2,7 +2,7 @@
 
 This project is currently in progress.
 
-This repository provides code for training a model that predicts vehicle trajectories. The model takes as input an image representing the previous one-second trajectory and generates an output image depicting the predicted trajectories for the next second in the traffic scenario.
+This repository provides code for training a model that predicts vehicle trajectories. The model takes as input an image representing the previous one-second trajectory and generates an output image depicting the predicted trajectories for the next second in the traffic scenario. The model can also predict further seconds ahead, receiving as input its output.
 
 Follow the steps below to set up and run the training process.
 
