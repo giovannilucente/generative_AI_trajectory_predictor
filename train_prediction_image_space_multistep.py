@@ -203,6 +203,7 @@ def main():
     # Model loading 
     if os.path.isfile(PRETRAINED_MODEL_PATH):
         model = load_unet(PRETRAINED_MODEL_PATH)
+        print(f"Using pretrained model")
     else:
         model = smp.Unet(
             encoder_name='resnet34', 
@@ -210,6 +211,7 @@ def main():
             in_channels=3,                 
             classes=3
         )
+        print(f"Training from scratch")
     
     optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
 
@@ -243,7 +245,6 @@ def main():
     else:
         raise ValueError(f"Unknown loss function: {args.loss}")
     
-    print(f"Using model: pretrained unet")
     print(f"Using loss function: {args.loss.lower()}")
     print(f"Predicting: {args.prediction.lower()}")
     print(f"Prediction Steps: {args.steps}")
