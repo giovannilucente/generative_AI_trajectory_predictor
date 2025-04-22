@@ -17,8 +17,8 @@ To install and run this project locally, follow these steps:
 ### 1. Clone the repository
 First, clone the repository to your local machine:
 ```bash
-git clone https://github.com/giovannilucente/portfolio.git
-cd portfolio/generative_ai_trajectory_prediction
+git clone https://github.com/giovannilucente/generative_AI_trajectory_predictor.git
+cd generative_AI_trajectory_predictor
 ```
 
 ### 2. Install the requirements
