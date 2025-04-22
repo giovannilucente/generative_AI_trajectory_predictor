@@ -168,6 +168,8 @@ def load_unet(model_path, encoder_name='resnet34', encoder_weights='imagenet', c
     model.eval()
     return model
 
+def is_folder_empty(folder_path):
+    return len(os.listdir(folder_path)) == 0
 
 def main():
     args = parse_args()
@@ -197,7 +199,15 @@ def main():
     device = DEVICE
 
     # Model loading 
-    model = load_unet(UNET_PATH)
+    if is_folder_empty(UNET_PATH):
+        model = smp.Unet(
+            encoder_name='resnet34', 
+            encoder_weights='imagenet', 
+            in_channels=3,                 
+            classes=3
+        )
+    else:
+        model = load_unet(UNET_PATH)
     
     optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
 
