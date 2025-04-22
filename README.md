@@ -67,6 +67,14 @@ Generated images of the validation dataset can be seen in the folder:
 /output/validation_plots_{name of the model}_{name of the loss function}. 
 ```
 In case of trajectory prediction, the initial folder is called /output_tracking.
+
+### 6. Testing
+To test the occupancy prediction model run:
+```bash
+python3 occupancy_prediction.py --model_path 'output/unet_multistep_balanced_weighted_l1_loss/best_model.pth' --datset_directory 'output_images_cv2'
+```
+modify the arguments to input the model to test and a directory where is located the dataset to test. The dataset must be already composed by images and not table data.
+
 ## Example of Predicted and Ground Truth images
 
 Below is an example of the predicted frame and ground truth, in terms of occupancy prediction.
