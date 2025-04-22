@@ -49,10 +49,15 @@ python3 rasterize_tracking_data.py
 The images that will be used for training the proper trajectory prediction will be generated in the folder /output_tracking_images_cv2.
 
 ### 5. Launch the training
-Now you can train the model using the following command:
+To train the model for occupancy prediction run the following command:
 ```bash
-python3 training.py
+python3 train_prediction_image_space_multistep.py --steps 3 --prediction occupancy --loss balanced_weighted_l1 --batch 32 --epochs 200
 ```
+To train the model for trajectory prediction run:
+```bash
+python3 train_prediction_image_space_multistep.py --steps 3 --prediction trajectories --loss balanced_weighted_l1 --batch 32 --epochs 200
+```
+There is the possibility to change the loss function (loss_functions.py contains the possible losses), the number of step in the future used for training, the batch size or number of epochs.
 The model will train and the best-performing model will be saved in the folder:
 ```bash
 /output/{name of the model}_{name of the loss function}.
@@ -61,9 +66,10 @@ Generated images of the validation dataset can be seen in the folder:
 ```bash
 /output/validation_plots_{name of the model}_{name of the loss function}. 
 ```
+In case of trajectory prediction, the initial folder is called /output_tracking.
 ## Example of Predicted and Ground Truth images
 
-Below is an example of the predicted frame and ground truth.
+Below is an example of the predicted frame and ground truth, in terms of occupancy prediction.
 
 <p align="center">
   <img src="media/40_0_output.png" alt="1step_output" width="45%"/>
