@@ -73,7 +73,53 @@ To test the occupancy prediction model run:
 ```bash
 python3 occupancy_prediction.py --model_path 'output/unet_multistep_balanced_weighted_l1_loss/best_model.pth' --datset_directory 'output_images_cv2'
 ```
-modify the arguments to input the model to test and a directory where is located the dataset to test. The dataset must be already composed by images and not table data.
+modify the arguments to input the model to test and a directory where is located the dataset to test. The dataset must be already composed by images and not table data. The metrics generated will be for instance:
+```bash
+Step 1 average metrics:
+  TP: 36.8947
+  FP: 5.0921
+  FN: 3.6974
+  precision: 0.8063
+  recall: 0.8130
+  f1_score: 0.7975
+  iou: 0.7242
+
+Step 2 average metrics:
+  TP: 34.9079
+  FP: 5.7368
+  FN: 6.5000
+  precision: 0.7772
+  recall: 0.7397
+  f1_score: 0.7385
+  iou: 0.6514
+
+Step 3 average metrics:
+  TP: 32.6316
+  FP: 7.2105
+  FN: 9.5132
+  precision: 0.7312
+  recall: 0.6797
+  f1_score: 0.6791
+  iou: 0.5734
+
+Step 4 average metrics:
+  TP: 30.0921
+  FP: 8.3289
+  FN: 12.2895
+  precision: 0.6746
+  recall: 0.5984
+  f1_score: 0.6090
+  iou: 0.4967
+
+Step 5 average metrics:
+  TP: 27.8026
+  FP: 9.2368
+  FN: 15.0526
+  precision: 0.6116
+  recall: 0.5468
+  f1_score: 0.5535
+  iou: 0.4459
+```
 
 ## Example of Predicted and Ground Truth images
 
