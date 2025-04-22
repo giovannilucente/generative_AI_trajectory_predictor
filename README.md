@@ -120,6 +120,14 @@ Step 5 average metrics:
   f1_score: 0.5535
   iou: 0.4459
 ```
+Where the pixel classification metrics are:
+- TP: true positive
+- FP: false positive
+- FN: false negative
+- precision: TP / (TP + FP)
+- recall: TP / (TP + FN)
+- F1: 2 * precision * recall / (precision + recall)
+- IoU: TP / (TP + FP + FN)
 
 ## Example of Predicted and Ground Truth images
 
