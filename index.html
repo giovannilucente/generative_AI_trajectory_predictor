@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI for Trajectory Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        img { width: 400px; height: auto; border-radius: 10px; object-fit: cover; margin: 10px; }
+        video { max-width: 80%; margin: 20px 0; }
+        .container { width: 80%; margin: auto; text-align: center; }
+        .scenarios { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .scenario { display: flex; flex-direction: column; align-items: center; }
+        .label { font-size: 16px; font-weight: bold; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Generative AI for Trajectory Prediction</h1>
+
+    <div class="container">
+        <h2> Motivation and Objectives</h2>
+        <p>
+            Generative AI is increasingly being applied across various fields, with image generation being a prominent area of focus. 
+            An intriguing application of this paradigm is its use in trajectory prediction, leveraging the advantages of image-based 
+            representations provided by Bird’s Eye View (BEV) scenarios. These representations are becoming increasingly prevalent as 
+            abstractions of sensor outputs.
+            The goal of this project is to take an image representing the previous one-second trajectory as input (serving as a conditioning 
+            image) and generate the predicted trajectory for the next seconds as an image. The design and experiments are still in progress, 
+            and some preliminary results are presented here. This project is carried out in collaboration with colleagues from DLR.
+        </p>
+
+        <h2> Links</h2>
+        <p><strong> GitHub Repository:</strong> <a href="https://github.com/giovannilucente/portfolio/tree/main/generative_ai_trajectory_prediction" target="_blank">View on GitHub</a></p>
+
+        <h2> Prediction examples </h2>
+        <div class="scenarios">
+            <div class="scenario">
+                <img src="media/2_16_input.png" alt="ex2">
+                <div class="label">Past rajectories as conditioning image</div>
+            </div>
+            <div class="scenario">
+                <img src="media/2_16_ground_truth.png" alt="ex1">
+                <div class="label">Future trajectories</div>
+            </div>
+            <div class="scenario">
+                <img src="media/2_16_output.png" alt="ex3">
+                <div class="label">Predicted trajectories</div>
+            </div>
+            <div class="scenario">
+                <img src="media/2_21_input.png" alt="ex2">
+                <div class="label">Past rajectories as conditioning image</div>
+            </div>
+            <div class="scenario">
+                <img src="media/2_21_ground_truth.png" alt="ex1">
+                <div class="label">Future trajectories</div>
+            </div>
+            <div class="scenario">
+                <img src="media/2_21_output.png" alt="ex3">
+                <div class="label">Predicted trajectories</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <br><br>
+    <a href="../index.html"> Back to Portfolio</a>
+</body>
+</html>
