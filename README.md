@@ -6,7 +6,7 @@ This repository provides code for training a model that predicts vehicle traject
 
 Follow the steps below to set up and run the training process.
 
-For more details, visit the [project page](https://giovannilucente.github.io/generative_AI_trajectory_predictor/index.html). 
+For more details, visit the [project page](https://giovannilucente.github.io/generative_AI_trajectory_predictor/). 
 
 This project is conducted in collaboration with other colleagues from DLR.
 
