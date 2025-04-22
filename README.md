@@ -37,7 +37,7 @@ cd ..
 Note: ensure that you download the dataset into the /trajectories folder.
 
 ### 4. Convert the dataset
-Once the dataset is downloaded, use the provided Python script to convert the raw DLR UT dataset into images that can be used for training. Run the following command:
+Once the dataset is downloaded, use the provided Python script to convert the raw DLR UT dataset into images that can be used for training. Run the following command, if you are interested in occupancy prediction:
 ```bash
 python3 rasterize_data.py
 ```
