@@ -56,10 +56,27 @@ Generated images of the validation dataset can be seen in the folder:
 ```bash
 /output/validation_plots_{name of the model}_{name of the loss function}. 
 ```
-## Example of Input, Ground Truth, and Predicted Images
+## Example of Predicted and Ground Truth images
 
-Below is an example of the input image, ground truth image, and predicted image.
+Below is an example of the predicted frame and ground truth.
 
-<p align="center"> <img src="media/2_21_input.png" alt="Input Image" width="30%"/> <img src="media/2_21_ground_truth.png" alt="Ground Truth Image" width="30%"/> <img src="media/2_21_output.png" alt="Predicted Image" width="30%"/> </p>
-
-
+<p align="center">
+  <img src="media/40_0_output.png" alt="1step_output" width="45%"/>
+  <img src="media/40_0_target.png" alt="1step_target" width="45%"/>
+</p>
+<p align="center">
+  <img src="media/40_1_output.png" alt="2step_output" width="45%"/>
+  <img src="media/40_1_target.png" alt="2step_target" width="45%"/>
+</p>
+<p align="center">
+  <img src="media/40_2_output.png" alt="3step_output" width="45%"/>
+  <img src="media/40_2_target.png" alt="3step_target" width="45%"/>
+</p>
+<p align="center">
+  <img src="media/40_3_output.png" alt="4step_output" width="45%"/>
+  <img src="media/40_3_target.png" alt="4step_target" width="45%"/>
+</p>
+<p align="center">
+  <img src="media/40_4_output.png" alt="5step_output" width="45%"/>
+  <img src="media/40_4_target.png" alt="5step_target" width="45%"/>
+</p>
