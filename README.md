@@ -42,6 +42,11 @@ Once the dataset is downloaded, use the provided Python script to convert the ra
 python3 rasterize_data.py
 ```
 The images that will be used for training will be generated in the folder /output_images_cv2.
+The frames will be green lines (representing vehicles trajectories for one second) in a black background. This allows to learn an occupancy prediction. If the scope is trajectory prediction, then is necessary to distinguish between different vehicles. Trajectories must be represented then with different colors. To generate a datset suitable for trajectory prediction run:
+```bash
+python3 rasterize_tracking_data.py
+```
+The images that will be used for training the proper trajectory prediction will be generated in the folder /output_tracking_images_cv2.
 
 ### 5. Launch the training
 Now you can train the model using the following command:
