@@ -27,7 +27,7 @@ import shutil
 import types
 
 # Configuration Parameters
-UNET_PATH = "output/Unet_weighted_l1_loss/best_model.pth"
+PRETRAINED_MODEL_PATH = "output/Unet_weighted_l1_loss/best_model.pth"
 IMAGE_DIR = 'output_images_cv2'                             # Directory containing the images
 IMAGE_DIR_TRACKING = 'output_tracking_images_cv2'           # Directory containing the tracking images
 OUTPUT_DIR = 'output'                                       # Directory to save the trained models and plots
@@ -49,6 +49,9 @@ def parse_args():
 
     # Trajectory prediction or occupancy prediction
     parser.add_argument('--prediction', type=str, default='occupancy', choices=['occupancy', 'trajectories'], help='Prediction to do: "occupancy" to predict occupancy, "trajectories" to predict trajectories (different datasets)')
+
+    # Pretrained model
+    parser.add_argument('--pretrained_model_path', type=str, default='output/Unet_weighted_l1_loss/best_model.pth', help='Path of a pretrained model, if present')
 
     # Number of prediction steps
     parser.add_argument('--steps', type=int, default=3, help='Prediction steps in the future')
@@ -168,13 +171,12 @@ def load_unet(model_path, encoder_name='resnet34', encoder_weights='imagenet', c
     model.eval()
     return model
 
-def is_folder_empty(folder_path):
-    return len(os.listdir(folder_path)) == 0
 
 def main():
     args = parse_args()
     output_dir = OUTPUT_DIR
     image_dir = IMAGE_DIR
+    PRETRAINED_MODEL_PATH = args.pretrained_model_path
 
     # Number of prediction steps:
     num_steps = args.steps
@@ -199,15 +201,15 @@ def main():
     device = DEVICE
 
     # Model loading 
-    if is_folder_empty(UNET_PATH):
+    if os.path.isfile(PRETRAINED_MODEL_PATH):
+        model = load_unet(PRETRAINED_MODEL_PATH)
+    else:
         model = smp.Unet(
             encoder_name='resnet34', 
             encoder_weights='imagenet', 
             in_channels=3,                 
             classes=3
         )
-    else:
-        model = load_unet(UNET_PATH)
     
     optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
 
